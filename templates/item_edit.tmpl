@@ -2,21 +2,30 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Edit Item</title>
+	<title>Modifica Record</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+	<style type="text/css">
+.auto-style1 {
+	text-align: center;
+}
+</style>
 </head>
 <body>
-	<form action="/item/save" method="post">
+	<form class="pure-form pure-form-aligned" action="/item/save" method="post">
+		<div class="auto-style1">
 		<label for="title">Title</label><br>
 		<input type="text" name="title" id="title" value="{{ .Item.Title }}"><br>
 		<br>
-		<label for="description">Description</label><br />
+		<label for="description" >Description</label><br />
 		<textarea name="description" id="description">{{ .Item.Description }}</textarea><br />
 		<br />
-		<label for="user_name">User Name</label><br>
+		<label for="user_name">Author</label><br>
 		<input type="text" name="user_name" id="user_name" value="{{ .Item.UserName }}"><br>
 		<br>
 		<input type="hidden" name="id" value="{{ .Item.Id }}">
-		<input type="submit" value="Save">
+		<input type="submit" value="Save" class="pure-button pure-button-primary">
+
+		</div>
 
 	</form>
 </body>

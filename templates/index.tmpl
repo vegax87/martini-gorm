@@ -3,18 +3,45 @@
 <head>
 	<meta charset="UTF-8">
 	<title>martini gorm example</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+	<style type="text/css">
+	.auto-style1 {
+		text-align: center;
+	}
+	.auto-style2 {
+		text-align: left;
+	}
+	</style>
 </head>
 <body>
-	<a href="/item/add">Add Item</a>
-	<hr>
-	<h1>Items</h1>
-	{{ range .Items }}
-	<h3>{{ .Title }}</h3>
-	<p>{{ .Description }}</p>
-	<p>By: {{ .UserName }}</p>
-	<p><a href="/item/edit/{{ .Id }}">Edit</a> | <a href="/item/remove/{{ .Id }}">Remove</a></p>
-	{{ else }}
-	<p>No items found!</p>
+	<div class="auto-style1">
+	
+	</div>
+	<h1 class="auto-style1">Records</h1>
+	<p class="auto-style1"><a href="/item/add">+ New Record</a></p>
+	<table border="1" class="pure-table pure-table-horizontal" align="center" >
+	<thead>
+	<tr>
+		<th class="auto-style1">Title</th>
+		<th class="auto-style1">Description</th>		
+		<th class="auto-style1">Author</th>
+		<th class="auto-style1">Actions</th>
+	</tr>
+	</thead>
+	<tbody>
+		<caption class="auto-style2">{{ range .Items }}
+	<tr>
+	<td>{{ .Title }}</td>
+	<td>{{ .Description }}</td>
+	<td>{{ .UserName }}</td>
+	<td><a href="/item/edit/{{ .Id }}">Edit</a> | <a href="/item/remove/{{ .Id }}">Delete</a></td>
+	</tr>
+		<caption class="auto-style2">{{ else }}
+	<p class="auto-style1">No records found!</p>
+		<div class="auto-style1">
 	{{ end }}
+	</div>
+	</tbody>
+	</table>
 </body>
 </html>

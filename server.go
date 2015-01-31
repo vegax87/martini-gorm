@@ -16,7 +16,7 @@ var (
 func main() {
 	var err error
 
-	sqlConnection = "doug:doug@tcp(127.0.0.1:3306)/martini-gorm?parseTime=True"
+	sqlConnection = "root:password@tcp(127.0.0.1:3306)/martini_gorm?parseTime=True"
 
 	db, err = gorm.Open("mysql", sqlConnection)
 
